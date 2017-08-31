@@ -1,6 +1,19 @@
 <?xml version="1.0" ?>
-<project name="ant-demo" default="hello">
-	<target name="hello">
-		<echo message="Hello ant!" />
+<project name="ant-demo" basedir="." default="run">
+	<target name="clean">
+		<delete dir="${basedir}/build" />
+	</target>
+
+	<target name="compile">
+		<mkdir dir="${basedir}/build/classes" />
+		<javac srcdir="${basedir}" destdir="${basedir}/build/classes" />
+	</target>
+
+	<target name="run" depends="compile">
+		<java classname="Hello">
+			<classpath>
+				<pathelement path="${basedir}/build/classes" />
+			</classpath>
+		</java>
 	</target>
 </project>
