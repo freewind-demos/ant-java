@@ -16,4 +16,12 @@
 			</classpath>
 		</java>
 	</target>
+
+	<target name="jar" depends="run">
+		<jar destfile="build/hello.jar" basedir="${basedir}/build/classes">
+			<manifest>
+				<attribute name="Main-class" value="Hello" />
+			</manifest>
+		</jar> 
+	</target>
 </project>

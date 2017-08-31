@@ -1,6 +1,8 @@
 Ant Java Demo
 ==============
 
+Compile, Run, and Jar
+
 ```
 brew install ant
 ```
@@ -29,4 +31,16 @@ run:
 
 BUILD SUCCESSFUL
 Total time: 0 seconds
+```
+
+Package a `jar` file and run it:
+
+```
+java jar
+```
+
+Then:
+
+```
+java -jar build/hello.jar
 ```
